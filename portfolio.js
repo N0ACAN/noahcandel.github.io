@@ -421,7 +421,7 @@ const documents = [
     title: "Tableau de synthèse",
     description:
       "Fichier Excel principal reliant les realisations presentees aux competences mobilisees dans le cadre de l'epreuve E5.",
-    href: "assets/documents/tableau-synthese-complet-n-candel.xlsx",
+    href: "Tableau%20de%20synth%C3%A8se%20NCANDEL.xlsx",
     meta: "Excel"
   },
   {
@@ -593,7 +593,11 @@ function renderExperiences() {
           <div class="stack-top">
             <div>
               <h4>${item.title}</h4>
-              <p class="stack-company">${item.company}</p>
+              <p class="stack-company">${
+                item.company === "Fresenius Kabi"
+                  ? `<button class="inline-company-link stack-company-link" type="button" data-company-modal-open>${item.company}</button>`
+                  : item.company
+              }</p>
             </div>
             <span class="stack-badge">${item.type}</span>
           </div>
@@ -885,6 +889,42 @@ function setupThemeToggle() {
   }
 }
 
+function setupCompanyModal() {
+  const modalBackdrop = document.querySelector("[data-company-modal]");
+  const modalClose = document.querySelector(".company-modal-close");
+  const modalTriggers = document.querySelectorAll("[data-company-modal-open]");
+
+  if (!modalBackdrop || !modalClose || !modalTriggers.length) return;
+
+  const openModal = () => {
+    modalBackdrop.hidden = false;
+    document.body.classList.add("modal-open");
+  };
+
+  const closeModal = () => {
+    modalBackdrop.hidden = true;
+    document.body.classList.remove("modal-open");
+  };
+
+  modalTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", openModal);
+  });
+
+  modalClose.addEventListener("click", closeModal);
+
+  modalBackdrop.addEventListener("click", (event) => {
+    if (event.target === modalBackdrop) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !modalBackdrop.hidden) {
+      closeModal();
+    }
+  });
+}
+
 function setupReveal() {
   const observer = new IntersectionObserver(
     (entries) => {
@@ -955,6 +995,7 @@ renderDocs();
 renderWatch();
 setupThemeToggle();
 setupMenu();
+setupCompanyModal();
 setupReveal();
 setupActiveNav();
 setupFilters();

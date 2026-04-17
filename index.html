@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Noah - Portfolio BTS SIO SISR</title>
-  <link rel="icon" href="favicon.png" type="image/png">
   <meta
     name="description"
     content="Portfolio BTS SIO SISR de Noah : alternant chez Fresenius Kabi en systèmes, réseaux, support, supervision, déploiement et projets d’infrastructure."
@@ -72,11 +71,11 @@
             <div class="hero-meta" aria-label="Informations de contact">
               <span class="hero-meta-item">Alternant BTS SIO SISR</span>
               <span class="hero-meta-separator">•</span>
-              <span class="hero-meta-item">Fresenius Kabi</span>
+              <button class="hero-meta-item company-trigger" type="button" data-company-modal-open>Fresenius Kabi</button>
             </div>
             
             <p class="hero-lead">
-              Alternant en BTS SIO option SISR chez Fresenius Kabi, je développe mes compétences en administration systèmes et réseaux à travers des missions concrètes liées au support, au déploiement, à la supervision et à l’infrastructure.
+              Alternant en BTS SIO option SISR chez <button class="inline-company-link" type="button" data-company-modal-open>Fresenius Kabi</button>, je développe mes compétences en administration systèmes et réseaux à travers des missions concrètes liées au support, au déploiement, à la supervision et à l’infrastructure.
             </p>
             <p class="hero-sublead">
              Ce portfolio présente mon parcours, mes compétences et les projets qui illustrent ma progression vers le métier d’administrateur systèmes et réseaux.
@@ -109,7 +108,7 @@
             <div class="profile-copy">
               <h3>Profil</h3>
               <p>
-               Je suis alternant en BTS SIO option SISR chez Fresenius Kabi. À travers cette expérience, je développe mes compétences en administration systèmes et réseaux, support, supervision, déploiement et gestion de parc. Mon objectif est de renforcer progressivement mon niveau technique et de construire un profil solide dans l’infrastructure, la sécurité et l’exploitation.
+               Je suis alternant en BTS SIO option SISR chez <button class="inline-company-link" type="button" data-company-modal-open>Fresenius Kabi</button>. À travers cette expérience, je développe mes compétences en administration systèmes et réseaux, support, supervision, déploiement et gestion de parc. Mon objectif est de renforcer progressivement mon niveau technique et de construire un profil solide dans l’infrastructure, la sécurité et l’exploitation.
               </p>
               <div class="info-list">
                 <div class="info-item">
@@ -126,7 +125,7 @@
                 </div>
               </div>
               <div class="hero-actions">
-                <a class="button button-tertiary" href="assets/documents/tableau-synthese-complet-n-candel.xlsx">
+                <a class="button button-tertiary" href="Tableau%20de%20synth%C3%A8se%20NCANDEL.xlsx">
                   Ouvrir le tableau de synthèse
                 </a>
                 <a class="button button-secondary" href="assets/documents/cv-2026-noah-candel.pdf" download>
@@ -160,8 +159,9 @@
             <article class="glass-card">
               <h3>Centres d’intérêt</h3>
               <ul class="feature-list alt">
-                <li>Moto & Mécanique</li>
-                <li>Randonnée & Sport</li>
+                <li>Endurance et dépassement de soi</li>
+                <li>Systèmes & Réseaux</li>
+                <li>Domotique et automatisation</li>
               </ul>
             </article>
           </div>
@@ -275,6 +275,31 @@
         </div>
       </div>
     </footer>
+  </div>
+
+  <div class="modal-backdrop" data-company-modal hidden>
+    <div class="company-modal" role="dialog" aria-modal="true" aria-labelledby="company-modal-title">
+      <button class="company-modal-close" type="button" aria-label="Fermer la fenêtre">×</button>
+      <div class="company-modal-badge">Entreprise d'accueil</div>
+      <h3 id="company-modal-title">Fresenius Kabi / Fresenius Vial à Brézins</h3>
+      <p>
+        Fresenius Kabi à Brézins est un site important du groupe, avec à la fois une partie production et une partie bureau regroupant plusieurs services comme la R&D, la V&V ou encore le SAV. Cette diversité montre l’importance des outils informatiques, des réseaux et des systèmes dans le fonctionnement quotidien du site. Mon rôle y est donc essentiel, car il contribue au bon fonctionnement des équipes, aussi bien côté industriel que côté tertiaire.
+      </p>
+      <div class="company-modal-grid">
+        <div class="company-modal-card">
+          <strong>Environnement</strong>
+          <span>Site de Brézins avec une activité répartie entre production et services de bureau, dans un cadre exigeant et structuré.</span>
+        </div>
+        <div class="company-modal-card">
+          <strong>Enjeux IT</strong>
+          <span>Assurer le bon fonctionnement des postes, des équipements, du réseau et des outils utilisés par l’ensemble des services du site.</span>
+        </div>
+        <div class="company-modal-card">
+          <strong>Ce que j'y développe</strong>
+          <span>Support utilisateurs, administration systèmes et réseaux, préparation de postes, interventions techniques et assistance au quotidien.</span>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="portfolio.js"></script>
